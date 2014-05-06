@@ -188,6 +188,7 @@ while 1:
                 inPlay = [0]*(power+1)
                 ms = 0
                 win = False
+                sets = 0
             if event.key == K_c: selected = []
             if event.key == K_1 and power>0:
                 if inPlay[0] in selected: selected.remove(inPlay[0])
