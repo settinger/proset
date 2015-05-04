@@ -40,7 +40,7 @@ dotposlist = [
 [(25, 50), (75, 50), (25, 100), (75, 100)],
 [(25, 25), (75, 25), (50, 75),  (25, 125), (75, 125)],
 [(25, 25), (75, 25), (25, 75),  (75, 75),  (25, 125), (75, 125)],
-[(50, 19), (25, 47), (75, 47),  (50, 75),  (25, 103), (75, 103), (50, 131)],
+[(25, 25), (75, 25), (25, 75),  (75, 75),  (25, 125), (75, 125), (50,50)],
 [(25, 19), (75, 19), (50, 47),  (25, 75),  (75, 75),  (50, 103), (25, 131), (75, 131)],
 [(17, 25), (50, 25), (83, 25),  (17, 75),  (50, 75),  (83, 75),  (17, 125), (50, 125), (83, 125)]]
 
@@ -50,9 +50,9 @@ dotcollist = [
 [red, orange, blue,   fuschia],
 [red, orange, green,  blue,   fuschia],
 [red, orange, yellow, green,  blue,  fuschia],
-[red, yellow, orange, green,  blue,  aqua,  fuschia],
-[red, orange, lime,   yellow, green, aqua,  blue, fuschia],
-[red, lime,   orange, yellow, gray,  green, blue, aqua, fuschia]]
+[red, orange, yellow, green,  blue,  fuschia, aqua],
+[red, orange, aqua,   yellow, green, gray, blue, fuschia],
+[red, aqua,   orange, yellow, gray,  green, blue, lime, fuschia]]
 
 # Dot radii, card size, etc
 radius = 16
