@@ -104,6 +104,7 @@ while power not in range(3,10):
                 cardrect = Rect(cardpos[k], cardsize)
                 if cardrect.collidepoint(mousepos): power = k+3
         elif event.type == KEYDOWN:
+            if event.key == K_ESCAPE: sys.exit()
             if event.key == K_q: sys.exit()
             if event.key == K_1: power = 3
             if event.key == K_2: power = 4
@@ -181,11 +182,14 @@ while 1:
                     if inPlay[k] in selected: selected.remove(inPlay[k])
                     else: selected.append(inPlay[k])
         elif event.type == KEYDOWN:
+            if event.key == K_ESCAPE: sys.exit()
+            if event.key == K_q: sys.exit()
             if event.key == K_r:
                 deck = range(1,2**power)
                 random.shuffle(deck)
                 selected = []
                 inPlay = [0]*(power+1)
+                clk.tick()
                 ms = 0
                 win = False
                 sets = 0
