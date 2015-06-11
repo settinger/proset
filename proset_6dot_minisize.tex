@@ -1,0 +1,67 @@
+\documentclass{article}
+\usepackage[paperwidth=8.5in,paperheight=11in,margin=0in]{geometry}
+\usepackage{tikz}
+
+\begin{document}
+\thispagestyle{empty}\pagestyle{empty}
+
+\newif\ifone \onetrue
+\newif\iftwo \twotrue
+\newif\ifthree \threetrue
+\newif\iffour \fourtrue
+\newif\iffive \fivetrue
+\newif\ifsix \sixtrue
+
+\newlength{\x}
+\setlength{\x}{.07\textwidth}
+
+\newcommand{\s}{\parbox{.25\textwidth}{\begin{tikzpicture}[line width=1.5mm,scale=1]
+% \draw[help lines] (-.125\textwidth,-.125\textheight) rectangle (.125\textwidth,.125\textheight);
+ \clip (-.125\textwidth,-.125\textheight) rectangle (.125\textwidth,.125\textheight);
+
+ \ifone		\draw[line width=1.5pt,fill=red] (-.375 in, .75 in) circle (0.25in); \fi
+ \iftwo		\draw[line width=1.5pt,fill=orange] (.375 in, .75 in) circle (0.25in); \fi
+ \ifthree	\draw[line width=1.5pt,fill=yellow] (-.375 in, 0 in) circle (0.25in); \fi
+ \iffour	\draw[line width=1.5pt,fill=green] (.375 in, 0 in) circle (0.25in); \fi
+ \iffive		\draw[line width=1.5pt,fill=blue] (-.375 in, -.75 in) circle (0.25in); \fi
+ \ifsix		\draw[line width=1.5pt,fill=magenta] (.375 in, -.75 in) circle (0.25in); \fi
+\end{tikzpicture}}
+\ifone \onefalse \else
+  \iftwo \twofalse \onetrue \else
+    \ifthree \threefalse \twotrue \onetrue \else
+      \iffour \fourfalse \threetrue \twotrue \onetrue \else 
+        \iffive \fivefalse \fourtrue \threetrue \twotrue \onetrue \else
+          \sixfalse \fivetrue \fourtrue \threetrue \twotrue \onetrue
+        \fi
+      \fi
+    \fi
+  \fi
+\fi
+\hspace{-1mm}}
+
+\newlength{\y}\setlength{\y}{-.5mm}
+\noindent
+\s\s\s\s \vspace{\y}
+\s\s\s\s \vspace{\y}
+\s\s\s\s \vspace{\y}
+\s\s\s\s \vspace{\y}
+
+\noindent
+\s\s\s\s \vspace{\y}
+\s\s\s\s \vspace{\y}
+\s\s\s\s \vspace{\y}
+\s\s\s\s \vspace{\y}
+
+\noindent
+\s\s\s\s \vspace{\y}
+\s\s\s\s \vspace{\y}
+\s\s\s\s \vspace{\y}
+\s\s\s\s \vspace{\y}
+
+\noindent
+\s\s\s\s \vspace{\y}
+\s\s\s\s \vspace{\y}
+\s\s\s\s \vspace{\y}
+\s\s\s\s \vspace{\y}
+
+\end{document}
