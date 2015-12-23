@@ -97,15 +97,18 @@ pygame.display.update()
 power = 0
 while power not in range(3,10):
     for event in pygame.event.get():
-        if event.type == pygame.QUIT: sys.exit()
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
         elif event.type == MOUSEBUTTONUP and event.button == 1:
             mousepos = event.pos
             for k in range(7):
                 cardrect = Rect(cardpos[k], cardsize)
                 if cardrect.collidepoint(mousepos): power = k+3
         elif event.type == KEYDOWN:
-            if event.key == K_ESCAPE: sys.exit()
-            if event.key == K_q: sys.exit()
+            if event.key == K_ESCAPE or event.key == K_q:
+                pygame.quit()
+                sys.exit()
             if event.key == K_1: power = 3
             if event.key == K_2: power = 4
             if event.key == K_3: power = 5
@@ -173,7 +176,9 @@ while 1:
     
     # Check for selections
     for event in pygame.event.get():
-        if event.type == pygame.QUIT: sys.exit()
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
         elif event.type == MOUSEBUTTONUP and event.button == 1:
             mousepos = event.pos
             for k in range(power+1):
@@ -182,8 +187,9 @@ while 1:
                     if inPlay[k] in selected: selected.remove(inPlay[k])
                     else: selected.append(inPlay[k])
         elif event.type == KEYDOWN:
-            if event.key == K_ESCAPE: sys.exit()
-            if event.key == K_q: sys.exit()
+            if event.key == K_ESCAPE or event.key == K_q:
+                pygame.quit()
+                sys.exit()
             if event.key == K_r:
                 deck = range(1,2**power)
                 random.shuffle(deck)
